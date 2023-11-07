@@ -3,6 +3,12 @@
 # Call the VPC module
 module "vpc" {
   source = "./modules/vpc"
+  aws_region = var.aws_region
+  cidr_block = "192.168.0.0/24"
+  public1_subnet_cidr = "192.168.0.0/26"
+  public2_subnet_cidr = "192.168.0.64/26"
+  private1_subnet_cidr = "192.168.0.128/26"
+  private2_subnet_cidr = "192.168.0.192/26"
 }
 
 # Call the EC2 module

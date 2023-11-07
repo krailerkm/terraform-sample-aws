@@ -1,16 +1,29 @@
+variable "aws_region" {
+  description = "The CIDR block for the public1 subnet."
+  type        = string
+}
+
 variable "cidr_block" {
   description = "The CIDR block for the VPC."
   type        = string
 }
 
-variable "public_subnet_cidr" {
-  description = "The CIDR block for the public subnet."
+variable "public1_subnet_cidr" {
+  description = "The CIDR block for the public1 subnet."
   type        = string
 }
 
-variable "availability_zone" {
-  description = "The availability zone where the subnet will be created."
+variable "public2_subnet_cidr" {
+  description = "The CIDR block for the public2 subnet."
   type        = string
 }
 
-# ... add more variables as needed
+variable "private1_subnet_cidr" {
+  description = "The CIDR block for the private1 subnet."
+  type        = string
+}
+
+variable "private2_subnet_cidr" {
+  description = "The CIDR block for the private2 subnet."
+  type        = string
+}
