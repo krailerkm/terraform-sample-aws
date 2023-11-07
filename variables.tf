@@ -5,3 +5,9 @@ variable "aws_region" {
   type        = string
   default     = "ap-northeast-2"
 }
+
+variable "aws_profile" {
+  description = "The AWS profile name to use for the connection."
+  type        = string
+  default     = "development"
+}
