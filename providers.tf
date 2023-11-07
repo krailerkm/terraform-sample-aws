@@ -1,1 +1,3 @@
-ECHO is on.
+provider "aws" {
+  region = var.aws_region
+}
