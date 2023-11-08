@@ -3,11 +3,6 @@ variable "vpc_id" {
   type        = string
 }
 
-variable "vpc_cidr" {
-  description = "The CIDR block of the VPC."
-  type        = string
-}
-
 variable "ami_id" {
   description = "The AMI ID to use for the instance."
   type        = string
@@ -23,7 +18,7 @@ variable "key_name" {
   type        = string
 }
 
-variable "subnet_id" {
+variable "ec2_subnet_id" {
   description = "The ID of the subnet where the instance will be created."
   type        = string
 }
@@ -33,5 +28,3 @@ variable "user_data" {
   default     = ""
   type        = string
 }
-
-# ... add more variables as needed
