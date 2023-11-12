@@ -10,7 +10,8 @@ resource "aws_subnet" "public1_subnet" {
   vpc_id     = aws_vpc.tvpc.id
   cidr_block = var.public1_subnet_cidr
   map_public_ip_on_launch = true
-  availability_zone = format("%s%s",var.aws_region,"a")
+  #availability_zone = format("%s%s",var.aws_region,"a")
+  availability_zone = data.aws_availability_zones.available.names[0]
   tags = {
     Name = "t-public1-subnet"
   }
@@ -20,7 +21,8 @@ resource "aws_subnet" "public2_subnet" {
   vpc_id     = aws_vpc.tvpc.id
   cidr_block = var.public2_subnet_cidr
   map_public_ip_on_launch = true
-  availability_zone = format("%s%s",var.aws_region,"b")
+  #availability_zone = format("%s%s",var.aws_region,"b")
+  availability_zone = data.aws_availability_zones.available.names[1]
   tags = {
     Name = "t-public2-subnet"
   }
@@ -30,7 +32,8 @@ resource "aws_subnet" "private1_subnet" {
   vpc_id     = aws_vpc.tvpc.id
   cidr_block = var.private1_subnet_cidr
   map_public_ip_on_launch = true
-  availability_zone = format("%s%s",var.aws_region,"a")
+  #availability_zone = format("%s%s",var.aws_region,"a")
+  availability_zone = data.aws_availability_zones.available.names[0]
   tags = {
     Name = "t-private1-subnet"
   }
@@ -40,7 +43,8 @@ resource "aws_subnet" "private2_subnet" {
   vpc_id     = aws_vpc.tvpc.id
   cidr_block = var.private2_subnet_cidr
   map_public_ip_on_launch = true
-  availability_zone = format("%s%s",var.aws_region,"b")
+  #availability_zone = format("%s%s",var.aws_region,"b")
+  availability_zone = data.aws_availability_zones.available.names[1]
   tags = {
     Name = "t-private2-subnet"
   }
