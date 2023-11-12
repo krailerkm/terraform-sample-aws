@@ -1,0 +1,28 @@
+cd C:\Users\krail\.aws
+cd C:\Users\krail\Documents\GitHub\terraform-sample-aws
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe init
+
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe init -migrate-state
+
+terraform init -backend-config=backend-dev.tfvars
+
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe validate
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe workspace new dev
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe workspace new prod
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe workspace select dev
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe workspace select prod
+
+
+
+set TF_LOG=DEBUG
+
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe plan -var-file=".\environments\development.tfvars"
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe apply -var-file=".\environments\development.tfvars"
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe destroy -var-file=".\environments\development.tfvars"
+
+
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe plan -var-file=".\environments\production.tfvars"
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe apply -var-file=".\environments\production.tfvars"
+C:\Users\krail\Downloads\terraform_1.6.3_windows_386\terraform.exe destroy -var-file=".\environments\production.tfvars"
+
+set TF_LOG=
